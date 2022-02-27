@@ -15,7 +15,7 @@ def get_sources(sources):
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = 'https://newsapi.org/v2/sources?category={}&language=en&apiKey='.format(sources)
+    get_sources_url = 'https://newsapi.org/v2/sources?category={}&language=en&apiKey=6e8935872b5c41d8b095146feb42ddee'.format(sources)
     with urllib.request.urlopen(get_sources_url) as url:
         sources_data = url.read()
         sources_response = json.loads(sources_data)
@@ -57,7 +57,7 @@ def get_articles(articles):
     function to get json response
     '''
     
-    get_articles_url = 'https://newsapi.org/v2/everything?q=Apple&from=2021-09-11&sortBy=popularity&apiKey='.format(articles)
+    get_articles_url = 'https://newsapi.org/v2/everything?q=Apple&from=2022-02-27&sortBy=popularity&apiKey=6e8935872b5c41d8b095146feb42ddee'.format(articles)
     
     with urllib.request.urlopen(get_articles_url) as url:
         
