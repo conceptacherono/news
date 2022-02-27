@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% else %}
+    <title>News</title>
+    {% endif %}
+</head>
+<body>
+   
+    <div class="container">
+        <h1 style="color:#2196F3;text-decoration-line:underline;text-align:center " id="top">WORLD SOURCES</h1>
+
+        <div class="row" id="content">
+            {% for source in sources %}
+
+            <div class="col-md-4">
+                <div class="card-deck">
+                        <div class="card" style="box-shadow: 3px 3px 5px #CFD8DC">
+                                <div class="card-content">
+                                    <div class="card-header-blue" style="color:#00BCD4">
+                                       <h2 class="card-heading" style="text-align:center;text-decoration-line: underline">{{source.name}}</h2>
+                                       </div>
+                                       <div class="card-body">
+                                       <p class="card-p" style="font-size:16px ">
+                                            {{source.description | truncate(80)}}
+                                            
+                                        </p>
+                                        <a href="/articles/{{source.id}}" class="btn btn-primary">view articles</a>
+                                     </div>
+                        </div>
+                        
+                        </div>
+                </div>
+            
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+   
+</body>
+</html>
