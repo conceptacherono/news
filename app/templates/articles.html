@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Cookie|News+Cycle" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity=
+    "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/ico" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdwgvYR6xRD7tWFURrhfoLcMB5v1OSBQXIjxB5QLwjlLf415iR" />
+    <style>
+        .card:hover{
+            padding: 5px;
+            box-shadow: 3px 3px 5px #2196F3;
+            cursor: pointer;
+        }
+
+        body{
+            background-color: #FAFAFA;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <a href="/" class="btn btn-primary">HOME</a>
+
+    <h1 style="color:#2196F3;
+                text-align: center;"> -Top Articles-</h1>
+    <div class="row">
+        {% for article in articles %}
+        <div class="col-md-4">
+            <div class="card" style="min-height:300px;">
+                <div class="card-block">
+                    <img src="{{article.urlToImage}}" alt="image" class="card-img-top">
+                    <div class="card-title">
+                        <h3 style="color:#00BCD4">{{article.title | truncate(70)}}</h3>
+                    </div>
+                    <div class="card-text">
+                        {{article.description}}
+                    </div>
+                    <br>
+                    <a href="{{article.url}}" target="_blank" class="btn btn-info">VIEW ON SITE</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %} 
+    </div>
+   
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
